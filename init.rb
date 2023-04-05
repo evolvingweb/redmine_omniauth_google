@@ -1,6 +1,7 @@
 require 'redmine'
-require File.dirname(__FILE__) + '/lib/redmine_omniauth_google/hooks'
-
+Rails.configuration.to_prepare do
+  require_dependency 'redmine_omniauth_google/hooks'
+end
 Redmine::Plugin.register :redmine_omniauth_google do
   name 'Redmine Omniauth Google plugin'
   author 'Dmitry Kovalenok'
